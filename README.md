@@ -15,7 +15,7 @@ The idea of this project is to create a new content for the student. A way to sy
 ## Pictures of prototype
 
 ### Drawing of the idea
-./pictures/prototype_idea.png
+![](./pictures/prototype_idea.png)
 
 ### Pictures of the beggining of implementation
 ./pictures/1.png
