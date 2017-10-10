@@ -1,0 +1,42 @@
+﻿<div class="modal-content autoclose col-sm-12" style="width: 1000px">
+
+    <!--Cabeçalho-->
+    <a data-bind="click: close" class="btn-fechar cor-label">
+        <span>
+            <img data-src="holder.js/30x30" src="content/images/ico-fechar.png">
+        </span>
+    </a>
+
+    <div class="modal-body clearfix">
+
+        <!--Título-->
+        <div class="page-header cor1">
+            <h4>Qual é a ideia nova que você aprendeu? </h4>
+        </div>
+        <input data-bind="value : titulo" />
+
+
+        <!--Detalhe-->
+        <div class="page-header cor1">
+            <h4>Explique melhor </h4>
+        </div>
+
+        <div class="col-md-12">
+            <textarea id="ckEditor" rows="10" cols="80" data-bind="ckEditor: detalhe, value:detalhe"></textarea>
+        </div>
+
+        <!--Questoes Resolvidas-->
+
+        <div class="page-header cor1">
+            <h4>Já resolveu alguma questão da apostila com essa idéia?</h4>
+        </div>
+
+    </div>
+    <div class="row form-group">
+        <div class="col-md-11 text-right">
+            <div class="row">
+                <a class="btn btn-success btn-salvar" style="width:auto;" role="button" data-bind="click: NovoBizuCriado">Criar</a>
+            </div>
+        </div>
+    </div>
+</div>

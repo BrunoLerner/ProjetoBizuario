@@ -1,0 +1,136 @@
+﻿<style>
+    tr.header {
+        cursor: pointer;
+    }
+
+    .icone {
+        color: #777b89;
+        font-weight: bolder;
+        font-size: large;
+    }
+
+    #myInput {
+        background-image: url('/css/searchicon.png'); /* Add a search icon to input */
+        background-position: 10px 12px; /* Position the search icon */
+        background-repeat: no-repeat; /* Do not repeat the icon image */
+        width: 100%; /* Full-width */
+        font-size: 16px; /* Increase font-size */
+        padding: 12px 20px 12px 40px; /* Add some padding */
+        border: 1px solid #ddd; /* Add a grey border */
+        margin-bottom: 12px; /* Add some space below the input */
+    }
+
+    #myUL {
+        /* Remove default list styling */
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+        #myUL li a {
+            border: 1px solid #ddd; /* Add a border to all links */
+            margin-top: -1px; /* Prevent double borders */
+            background-color: #f6f6f6; /* Grey background color */
+            padding: 12px; /* Add some padding */
+            text-decoration: none; /* Remove default text underline */
+            font-size: 18px; /* Increase the font-size */
+            color: black; /* Add a black text color */
+            display: block; /* Make it into a block element to fill the whole list */
+        }
+
+            #myUL li a.header {
+                background-color: #e2e2e2; /* Add a darker background color for headers */
+                cursor: default; /* Change cursor style */
+            }
+
+            #myUL li a:hover:not(.header) {
+                background-color: #eee; /* Add a hover effect to all links, except for headers */
+            }
+</style>
+
+
+<section class="col-xs-10 col-md-11">
+
+    <!--Cabeçalho-->
+    <div class="page-header cor1">
+        <h3 class="titulo-pagina">
+            <span class="texto-pagina">Inventário de Ideias</span>
+        </h3>
+    </div>
+    
+    <div class="col-sm-12">
+
+        <div class="panel panel-default shadow-panel-box form-horizontal">
+
+            <!--Abas-->
+            <ul class="nav nav-tabs" align="center">
+                <li class="active"><a href="#tab1" data-toggle="tab" data-bind="click : DefinirDisciplina(1)">Matemática</a></li>
+                <li><a href="#tab2" data-toggle="tab"  data-bind="click : DefinirDisciplina(2)">Física</a></li>
+                <li><a href="#tab3" data-toggle="tab"  data-bind="click : DefinirDisciplina(3)">Química</a></li>
+            </ul>
+
+            <!--Search-->
+            <div align="center">
+                <input type="text" id="myInput" data-bind="textInput : search" placeholder="Procure um bizu..">
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </div>
+
+
+
+            <!--lista dos bizus-->
+
+
+            <ul id="myUL" class="list-group">
+                <!--ko foreach: ideias-->
+                <li class="list-group-item clearfix">
+
+                    <div data-bind="click: $parent.tornadetalhevisivel">
+                        <i class="icon-remove-circle icon-align-right" saria-hidden="true" style="float:right;font-size:20px;margin-right:10px"></i>
+                        <i class="icon-pencil  icon-align-right" saria-hidden="true" style="float:right;font-size:20px;margin-right:20px" data-bind="click : $parent.EditarIdeia"></i>
+                        <a data-bind="text : titulo"></a>
+                    </div>
+
+                    <div data-bind="visible: bizuvisivel">
+                        <div class="page-header cor1">
+                            <h4 style="display: inline;">Explique melhor ...</h4>
+                        </div>
+
+                        <!--Enunciado em branco-->
+                        <div class="col-md-12 font12" data-bind="visible:$parent.PossuiValor(detalhe()) == false">
+                            <span style="color: #FF0000;">Você ainda não fez uma explicação sobre essa ideia.</span>
+                        </div>
+                        <!--Exibição do enunciado-->
+                        <div class="col-md-12" data-bind="visible: $parent.PossuiValor(detalhe()) == true, html: detalhe()"></div><br/><br />
+
+
+                        <div class="page-header cor1">
+                            <h4 style="display: inline;">Questões resolvidas com essa ideia ...</h4>
+                        </div>
+                        <div class="col-md-12 font12" >
+                            <div>
+                        </div>
+                    </div>
+
+
+                </li>
+                <!--/ko-->
+            </ul>
+
+
+
+
+
+            <!--Botões-->
+            <div class="row form-group">
+                <div class="col-md-11 text-right">
+                    <div class="row">
+                        <a class="btn btn-success btn-salvar" style="width:auto;" role="button">Exportar Bizuario</a>
+                        <a class="btn btn-success btn-salvar" style="width:auto;" role="button" data-bind="click: CriarNovoBizu">Criar Bizu</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</section
