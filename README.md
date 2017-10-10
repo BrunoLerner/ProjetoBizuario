@@ -18,11 +18,11 @@ The idea of this project is to create a new content for the student. A way to sy
 ![](./pictures/prototype_idea.png)
 
 ### Pictures of the beggining of implementation
-./pictures/1.png
-./pictures/2.png
-./pictures/3.png
-./pictures/4.png
-./pictures/6.png
+![alt tag](./pictures/1.png)
+![alt tag](./pictures/2.png)
+![alt tag](./pictures/3.png)
+![alt tag](./pictures/4.png)
+![alt tag](./pictures/6.png)
 
 
 ## Not Standalone
